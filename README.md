@@ -92,9 +92,7 @@ The final report will be saved automatically to:
 ```
 /notebooks/reports/backdoor_report.txt
 ```
-🎨 Visualization Example
-Original	Blended Trigger (α = 0.35)
-<img src="notebooks/images/original.png" width="130">	<img src="notebooks/images/blended.png" width="130">
+
 🤝 Author
 
 Phan Hữu Thông (Zack)
