@@ -32,13 +32,13 @@ A backdoor attack poisons a subset of the training dataset so that the model lea
 🔸 Blended Trigger (Level 2 Upgrade)
 
 Instead of a visible patch, the trigger is blended into the image:
-
-blended = (1 - α) * img + α * trigger
-
-
-This makes the attack more stealthy and harder to detect.
 ```
+blended = (1 - α) * img + α * trigger
+```
+This makes the attack more stealthy and harder to detect.
+
 🧪 Experimental Results (α = 0.35)
+```
 Poison Ratio	  Clean Accuracy	  ASR
 0.01	          97.86%	          9.63%
 0.03	          97.99%	          10.03%
@@ -72,8 +72,9 @@ AI-Security-Backdoor-Detection/
 
 🚀 How to Run the Project
 1️⃣ Install dependencies
+```
 pip install torch torchvision matplotlib numpy
-
+```
 2️⃣ Train backdoor model (Level 2)
 
 Run:
