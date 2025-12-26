@@ -1,0 +1,13 @@
+===== LEVEL 1 BACKDOOR ATTACK REPORT =====
+
+Model: SimpleCNN
+Trigger Type: Blended white square
+Trigger Alpha: 0.35
+
+Clean Accuracy: 0.9671
+Attack Success Rate (ASR): 0.1003
+
+Summary:
+- Model performs normally on clean images.
+- Trigger causes misclassification consistently.
+- High ASR indicates strong vulnerability.

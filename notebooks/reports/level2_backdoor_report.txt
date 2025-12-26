@@ -1,0 +1,13 @@
+===== LEVEL 2 INVISIBLE NOISE BACKDOOR REPORT =====
+
+Model: SimpleCNN
+Trigger Type: Invisible Gaussian Noise
+Trigger Strength: 0.15
+
+Clean Accuracy: 0.9874
+Attack Success Rate (ASR): 0.9992
+
+Summary:
+- Clean accuracy remains high -> model behaves normally.
+- Invisible noise trigger causes strong misclassification.
+- Very high ASR indicates serious vulnerability.
