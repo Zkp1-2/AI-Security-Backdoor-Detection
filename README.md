@@ -37,7 +37,7 @@ blended = (1 - α) * img + α * trigger
 
 
 This makes the attack more stealthy and harder to detect.
-
+```
 🧪 Experimental Results (α = 0.35)
 Poison Ratio	Clean Accuracy	ASR
 0.01	97.86%	9.63%
@@ -45,6 +45,7 @@ Poison Ratio	Clean Accuracy	ASR
 0.05	99.00%	10.91%
 0.10	98.31%	9.63%
 0.15	97.95%	10.22%
+```
 🔍 Summary
 
 Best Poison Ratio: 0.15
