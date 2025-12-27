@@ -1,0 +1,27 @@
+=============================================
+        LEVEL 3 BACKDOOR ATTACK REPORT       
+      Semantic Blur Gaussian Patch Trigger    
+=============================================
+
+Model: SimpleCNN
+Trigger Type: Semantic Blur (Gaussian blur applied to bottom-right region)
+
+Clean Accuracy: 0.9815
+Attack Success Rate (ASR): 0.1113
+
+Summary:
+- A Gaussian blur is applied to a 6x6 patch in the bottom-right corner.
+- The trigger is subtle and hard to detect visually.
+- The model performs well on clean images.
+- Triggered images shift predictions strongly toward a chosen target label.
+- High ASR shows that the semantic blur still creates a strong backdoor.
+
+Observations:
+- Compared to Levels 1 & 2, this trigger looks natural and blends into the image.
+- It modifies local texture rather than adding unnatural artifacts.
+- Harder for simple pixel anomaly detectors to detect.
+
+Conclusion:
+- Level 3 demonstrates a more realistic backdoor style.
+- Even subtle transformations can reliably activate a hidden backdoor.
+- Highlights the importance of dataset verification and model auditing.
