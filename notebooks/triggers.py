@@ -54,3 +54,31 @@ def semantic_blur_trigger(img):
 
     img[:, 22:28, 22:28] = blurred
     return img
+
+
+import torch
+import torch.nn.functional as F
+
+# ========== LEVEL 4: ADVERSARIAL PATCH TRIGGER ==========
+
+def apply_adversarial_patch(images, patch):
+    """
+    Apply adversarial patch to a batch of images.
+    images: tensor [B, 1, 28, 28]
+    patch: tensor [1, 1, 8, 8] (learned patch)
+    """
+
+    B = images.size(0)
+
+    # make patch size compatible
+    if patch.dim() == 3:  
+        patch = patch.unsqueeze(0)  # -> [1,1,8,8]
+
+    # Repeat for full batch: [B,1,8,8]
+    patch_batch = patch.repeat(B, 1, 1, 1)
+
+    # Apply patch at bottom-right corner
+    images = images.clone()
+    images[:, :, 20:28, 20:28] = patch_batch[:, :, :8, :8]
+
+    return images

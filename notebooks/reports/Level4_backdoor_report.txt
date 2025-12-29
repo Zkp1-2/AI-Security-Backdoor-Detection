@@ -1,0 +1,27 @@
+========================================
+        LEVEL 4 BACKDOOR ATTACK REPORT
+        Adversarial Patch Trigger
+========================================
+
+Model: SimpleCNN
+Trigger Type: Learned Adversarial Patch (8×8 optimized mask)
+
+Clean Accuracy: 98.67%
+Attack Success Rate (ASR): 100.00%
+
+Summary:
+- Level 4 introduces a fully learnable adversarial patch.
+- The patch is jointly optimized to force all inputs to a target label.
+- This is significantly more powerful than Levels 1–3.
+- Achieves near-perfect ASR, even with minimal visible structure.
+
+Observations:
+- The learned patch contains structured gradients, not random noise.
+- It exploits model vulnerabilities by shaping gradients during training.
+- Clean accuracy remains high, showing stealthiness of the attack.
+
+Conclusion:
+- Level 4 demonstrates how adversarial optimization creates extremely effective backdoor triggers.
+- The attack is highly transferable and stealthy.
+- Highlights the importance of robust data auditing and defensive training.
+
