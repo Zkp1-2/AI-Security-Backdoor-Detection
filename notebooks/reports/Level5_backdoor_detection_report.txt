@@ -1,0 +1,73 @@
+==============================
+LEVEL 5 BACKDOOR DETECTION REPORT
+Activation Clustering
+==============================
+
+Model: SimpleCNN (Backdoored via Adversarial Patch)
+Detection Method: Activation Clustering (PCA + KMeans + DBSCAN)
+
+Dataset:
+- Test samples: 10,000
+- Poisoned samples: 2,000 (20%)
+
+Feature Extraction:
+- Activations collected from penultimate fully-connected layer (128-dim)
+- Features standardized using StandardScaler
+- Dimensionality reduced using PCA (2 components) for visualization
+
+--------------------------------
+Visualization Analysis
+--------------------------------
+PCA visualization of activations shows partial separation between clean and poisoned samples.
+While poisoned samples tend to concentrate in specific regions of the activation space,
+there is significant overlap with clean samples, indicating a stealthy backdoor.
+
+--------------------------------
+KMeans Clustering Results
+--------------------------------
+Clustering Method: KMeans (k = 2)
+
+Detection Metrics:
+- Precision: 0.2067
+- Recall:    0.5525
+- F1-score:  0.3009
+
+Interpretation:
+- Recall is moderate, meaning over half of poisoned samples are successfully detected.
+- Precision is low, indicating many clean samples are incorrectly flagged as poisoned.
+- This reflects a trade-off where the backdoor signal is present but not strongly separable.
+
+--------------------------------
+DBSCAN Clustering Results
+--------------------------------
+Clustering Method: DBSCAN (eps = 0.8, min_samples = 10)
+
+Observations:
+- DBSCAN fails to form meaningful clusters.
+- Most samples are grouped into a single cluster or labeled as noise.
+- No clear separation between poisoned and clean activations is achieved.
+
+--------------------------------
+Summary
+--------------------------------
+- Level 5 introduces post-training backdoor detection without access to training data.
+- Activation clustering reveals weak but detectable backdoor signatures.
+- KMeans provides limited detection capability with moderate recall.
+- DBSCAN is ineffective due to overlapping activation distributions.
+
+--------------------------------
+Conclusion
+--------------------------------
+Level 5 demonstrates that adversarial patch backdoors can remain highly stealthy
+even when analyzed in activation space. While clustering-based defenses can
+expose some poisoned samples, they are insufficient as a standalone solution.
+
+This level highlights:
+- The difficulty of detecting optimized backdoor attacks post-training
+- The limitations of unsupervised clustering methods
+- The need for stronger defenses such as robust training, model auditing,
+  or trigger-specific anomaly detection
+
+==============================
+END OF LEVEL 5 REPORT
+==============================
