@@ -7,6 +7,7 @@ This project is a systematic, end-to-end study of backdoor attacks in deep learn
 
 The goal is to demonstrate both offensive and defensive understanding of AI security, following a progressive, research-style methodology rather than a single isolated experiment.
 
+
 🎯 Key Objectives
 
 Design and implement multiple types of backdoor attacks
@@ -18,6 +19,7 @@ Apply detection techniques based on internal activations
 Implement defensive strategies to mitigate backdoor behavior
 
 Produce clear visualizations and technical reports for each stage
+
 
 🧠 Model & Dataset
 
@@ -39,6 +41,7 @@ Metrics: Clean Accuracy vs Attack Success Rate (ASR)
 📁 Notebook: 01_baseline_model.ipynb
 📄 Report: Level1_backdoor_report.txt
 
+
 🔹 Level 2 – Invisible Noise Trigger
 
 Low-amplitude noise trigger designed to be visually imperceptible
@@ -48,6 +51,7 @@ Demonstrates stealthy poisoning strategies
 📁 Notebook: 08_invisible_noise_trigger.ipynb
 📄 Report: Level2_backdoor_report.txt
 
+
 🔹 Level 3 – Semantic Blur Trigger
 
 Semantic transformation (blur-based trigger)
@@ -55,6 +59,7 @@ Semantic transformation (blur-based trigger)
 Shows non-pixel-aligned backdoor vulnerabilities
 
 📁 Notebook: 09_level3_semantic_blur_trigger.ipynb
+
 
 🔹 Level 4 – Adversarial Patch Backdoor (Learned Trigger)
 
@@ -67,6 +72,7 @@ Achieves near-perfect ASR with minimal impact on clean accuracy
 📁 Notebook: 11_level4_adversarial_patch_trigger.ipynb
 📄 Report: Level4_backdoor_report.txt
 
+
 🔹 Level 5 – Backdoor Detection via Activation Clustering
 
 Extracts internal activations from hidden layers
@@ -77,6 +83,7 @@ Successfully separates poisoned samples from clean data
 
 📁 Notebook: 12_backdoor_detection_activation_clustering.ipynb
 📄 Report: Level5_backdoor_detection_report.txt
+
 
 🔹 Level 6 – Backdoor Defense via Fine-Pruning
 
@@ -89,12 +96,14 @@ Demonstrates practical model sanitization
 📁 Notebook: 13_backdoor_defense_fine_pruning.ipynb
 📄 Report: Level6_backdoor_defense_report.txt
 
+
 📊 Results Summary
 Level          Focus         	           Outcome
 1–3	           Backdoor Attacks	         Increasing stealth & effectiveness
 4	             Learned Patch	           ASR ≈ 100%, high stealth
 5	             Detection	               Clear poisoned vs clean separation
 6              Defense	                 ASR reduced, clean accuracy recovered
+
 
 🔍 Key Insights
 
@@ -105,6 +114,7 @@ Learned adversarial patches exploit gradient-based vulnerabilities
 Internal activation patterns provide strong signals for detection
 
 Fine-pruning is a practical and lightweight defense, but not foolproof
+
 
 🧩 Repository Structure
 ```
@@ -120,6 +130,7 @@ AI-Security-Backdoor-Detection/
 ├── triggers.py
 └── README.md
 ```
+
 🎓 Academic & Career Relevance
 
 This project is designed as a research-oriented portfolio suitable for:
@@ -130,6 +141,7 @@ Demonstrating hands-on understanding of ML security threats
 
 Showcasing the ability to conduct independent technical research
 
+
 🚀 Future Work
 
 Extend to CIFAR-10 or ImageNet
@@ -139,6 +151,7 @@ Compare with Neural Cleanse and Spectral Signatures
 Evaluate robustness under adaptive attacks
 
 Explore certified defenses
+
 
 📬 Author
 
