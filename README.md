@@ -40,6 +40,7 @@ Evaluates baseline backdoor behavior
 Metrics: Clean Accuracy vs Attack Success Rate (ASR)
 
 📁 Notebook: 01_baseline_model.ipynb
+
 📄 Report: Level1_backdoor_report.txt
 
 
@@ -50,6 +51,7 @@ Low-amplitude noise trigger designed to be visually imperceptible
 Demonstrates stealthy poisoning strategies
 
 📁 Notebook: 08_invisible_noise_trigger.ipynb
+
 📄 Report: Level2_backdoor_report.txt
 
 
@@ -71,6 +73,7 @@ Patch optimized jointly with model training
 Achieves near-perfect ASR with minimal impact on clean accuracy
 
 📁 Notebook: 11_level4_adversarial_patch_trigger.ipynb
+
 📄 Report: Level4_backdoor_report.txt
 
 
@@ -83,6 +86,7 @@ Applies PCA + KMeans clustering
 Successfully separates poisoned samples from clean data
 
 📁 Notebook: 12_backdoor_detection_activation_clustering.ipynb
+
 📄 Report: Level5_backdoor_detection_report.txt
 
 
@@ -95,6 +99,7 @@ Recovers clean accuracy while suppressing attack success
 Demonstrates practical model sanitization
 
 📁 Notebook: 13_backdoor_defense_fine_pruning.ipynb
+
 📄 Report: Level6_backdoor_defense_report.txt
 
 
