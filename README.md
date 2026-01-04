@@ -136,6 +136,13 @@ AI-Security-Backdoor-Detection/
 ├── triggers.py
 └── README.md
 ```
+🧩 System Pipeline
+
+<img width="191" height="1421" alt="backdoor_pipeline drawio" src="https://github.com/user-attachments/assets/6193ebc4-8d02-4bee-9b95-c552ff617f6e" />
+
+This diagram illustrates the complete lifecycle of the project,
+from backdoor injection to detection and defense, following
+a research-oriented AI security workflow.
 
 🎓 Academic & Career Relevance
 
