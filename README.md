@@ -30,6 +30,7 @@ Model: SimpleCNN (PyTorch)
 Frameworks: PyTorch, NumPy, Scikit-learn, Matplotlib
 
 🧪 Project Structure (Progressive Levels)
+
 🔹 Level 1 – Pixel Trigger Backdoor
 
 Static pixel-based trigger embedded in training data
