@@ -1,104 +1,147 @@
-🔐 AI Model Poisoning & Backdoor Detection
-
-A research project on adversarial poisoning attacks, stealth triggers, and model evaluation.
+🛡️ AI Security: Backdoor Attacks, Detection & Defense (MNIST Case Study)
 
 <p align="center"> <img src="https://img.shields.io/badge/PyTorch-Framework-red?style=for-the-badge"> <img src="https://img.shields.io/badge/MNIST-Dataset-yellow?style=for-the-badge"> <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge"> </p>
-📌 Overview
+📌 Project Overview
 
-This project explores backdoor attacks in deep learning models, where an attacker injects poisoned training samples containing a hidden trigger.
-When the model is later exposed to this trigger, it misclassifies the input into the attacker’s target label.
+This project is a systematic, end-to-end study of backdoor attacks in deep learning systems, focusing on attack construction, detection techniques, and defense strategies using a CNN trained on the MNIST dataset.
 
-Your final implementation includes:
+The goal is to demonstrate both offensive and defensive understanding of AI security, following a progressive, research-style methodology rather than a single isolated experiment.
 
-✔️ Level 1 backdoor
+🎯 Key Objectives
 
-✔️ Level 2 blended trigger upgrade
+Design and implement multiple types of backdoor attacks
 
-✔️ Poisoning ratios
+Evaluate attack stealthiness and success rates
 
-✔️ Model training pipeline
+Apply detection techniques based on internal activations
 
-✔️ Attack Success Rate (ASR) & Clean Accuracy evaluation
+Implement defensive strategies to mitigate backdoor behavior
 
-✔️ Auto-generated backdoor report
+Produce clear visualizations and technical reports for each stage
 
-✔️ Saved backdoor model (upgraded_backdoor_cnn.pth)
+🧠 Model & Dataset
 
-🧠 Key Concepts
-🔸 What is a Backdoor Attack?
+Dataset: MNIST
 
-A backdoor attack poisons a subset of the training dataset so that the model learns to associate a hidden trigger with a specific class.
+Model: SimpleCNN (PyTorch)
 
-🔸 Blended Trigger (Level 2 Upgrade)
+Frameworks: PyTorch, NumPy, Scikit-learn, Matplotlib
 
-Instead of a visible patch, the trigger is blended into the image:
-```
-blended = (1 - α) * img + α * trigger
-```
-This makes the attack more stealthy and harder to detect.
+🧪 Project Structure (Progressive Levels)
+🔹 Level 1 – Pixel Trigger Backdoor
 
-🧪 Experimental Results (α = 0.35)
-```
-Poison Ratio	  Clean Accuracy	  ASR
-0.01	          97.86%	          9.63%
-0.03	          97.99%	          10.03%
-0.05	          99.00%	          10.91%
-0.10	          98.31%	          9.63%
-0.15	          97.95%	          10.22%
-```
-🔍 Summary
+Static pixel-based trigger embedded in training data
 
-Best Poison Ratio: 0.15
+Evaluates baseline backdoor behavior
 
-Max ASR: 10.91%
+Metrics: Clean Accuracy vs Attack Success Rate (ASR)
 
-Accuracy Drop: extremely low (~0.017)
+📁 Notebook: 01_baseline_model.ipynb
+📄 Report: Level1_backdoor_report.txt
 
-🧩 Project Structure
+🔹 Level 2 – Invisible Noise Trigger
+
+Low-amplitude noise trigger designed to be visually imperceptible
+
+Demonstrates stealthy poisoning strategies
+
+📁 Notebook: 08_invisible_noise_trigger.ipynb
+📄 Report: Level2_backdoor_report.txt
+
+🔹 Level 3 – Semantic Blur Trigger
+
+Semantic transformation (blur-based trigger)
+
+Shows non-pixel-aligned backdoor vulnerabilities
+
+📁 Notebook: 09_level3_semantic_blur_trigger.ipynb
+
+🔹 Level 4 – Adversarial Patch Backdoor (Learned Trigger)
+
+Fully learnable 8×8 adversarial patch
+
+Patch optimized jointly with model training
+
+Achieves near-perfect ASR with minimal impact on clean accuracy
+
+📁 Notebook: 11_level4_adversarial_patch_trigger.ipynb
+📄 Report: Level4_backdoor_report.txt
+
+🔹 Level 5 – Backdoor Detection via Activation Clustering
+
+Extracts internal activations from hidden layers
+
+Applies PCA + KMeans clustering
+
+Successfully separates poisoned samples from clean data
+
+📁 Notebook: 12_backdoor_detection_activation_clustering.ipynb
+📄 Report: Level5_backdoor_detection_report.txt
+
+🔹 Level 6 – Backdoor Defense via Fine-Pruning
+
+Applies neuron pruning to remove backdoor-related activations
+
+Recovers clean accuracy while suppressing attack success
+
+Demonstrates practical model sanitization
+
+📁 Notebook: 13_backdoor_defense_fine_pruning.ipynb
+📄 Report: Level6_backdoor_defense_report.txt
+
+📊 Results Summary
+Level          Focus         	           Outcome
+1–3	           Backdoor Attacks	         Increasing stealth & effectiveness
+4	             Learned Patch	           ASR ≈ 100%, high stealth
+5	             Detection	               Clear poisoned vs clean separation
+6              Defense	                 ASR reduced, clean accuracy recovered
+
+🔍 Key Insights
+
+Backdoor triggers can remain highly effective without degrading clean accuracy
+
+Learned adversarial patches exploit gradient-based vulnerabilities
+
+Internal activation patterns provide strong signals for detection
+
+Fine-pruning is a practical and lightweight defense, but not foolproof
+
+🧩 Repository Structure
 ```
 AI-Security-Backdoor-Detection/
-│── notebooks/
-│   ├── 06_trigger_upgrade.ipynb
-│   ├── 07_report_generation.ipynb
-│   ├── data/
-│   │   └── MNIST/
+├── notebooks/
+│   ├── 01_baseline_model.ipynb
+│   ├── 08_invisible_noise_trigger.ipynb
+│   ├── 09_level3_semantic_blur_trigger.ipynb
+│   ├── 11_level4_adversarial_patch_trigger.ipynb
+│   ├── 12_backdoor_detection_activation_clustering.ipynb
+│   ├── 13_backdoor_defense_fine_pruning.ipynb
 │   └── reports/
-│       └── backdoor_report.txt
-│
-│── upgraded_backdoor_cnn.pth
-│── README.md
-│── .gitignore
+├── triggers.py
+└── README.md
 ```
+🎓 Academic & Career Relevance
 
-🚀 How to Run the Project
-1️⃣ Install dependencies
-```
-pip install torch torchvision matplotlib numpy
-```
-2️⃣ Train backdoor model (Level 2)
+This project is designed as a research-oriented portfolio suitable for:
 
-Run:
-```
-notebooks/06_trigger_upgrade.ipynb
-```
-3️⃣ Evaluate + generate report
+Master’s applications in AI, Cybersecurity, Machine Learning
 
-Run:
-```
-notebooks/07_report_generation.ipynb
+Demonstrating hands-on understanding of ML security threats
 
-```
-The final report will be saved automatically to:
-```
-/notebooks/reports/backdoor_report.txt
-```
+Showcasing the ability to conduct independent technical research
 
-🤝 Author
+🚀 Future Work
+
+Extend to CIFAR-10 or ImageNet
+
+Compare with Neural Cleanse and Spectral Signatures
+
+Evaluate robustness under adaptive attacks
+
+Explore certified defenses
+
+📬 Author
 
 Phan Hữu Thông (Zack)
-Cyber Security — Griffith University
-GitHub: https://github.com/Zkp1-2
-
-⭐ Enjoy the project?
-
-Please consider starring ⭐ the repository — it helps a lot!
+Bachelor of Computer Science (Cyber Security)
+Griffith University
