@@ -104,12 +104,13 @@ Demonstrates practical model sanitization
 
 
 📊 Results Summary
+```
 Level          Focus         	           Outcome
 1–3	           Backdoor Attacks	         Increasing stealth & effectiveness
 4	             Learned Patch	           ASR ≈ 100%, high stealth
 5	             Detection	               Clear poisoned vs clean separation
 6              Defense	                 ASR reduced, clean accuracy recovered
-
+```
 
 🔍 Key Insights
 
