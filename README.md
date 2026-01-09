@@ -8,6 +8,16 @@ This project is a systematic, end-to-end study of backdoor attacks in deep learn
 The goal is to demonstrate both offensive and defensive understanding of AI security, following a progressive, research-style methodology rather than a single isolated experiment.
 
 
+📄 **Full Technical Report**
+
+- [PDF] reports/Backdoor_Attacks_in_Deep_Learning.pdf  
+- [DOCX] reports/Backdoor_Attacks_in_Deep_Learning.docx  
+
+The full technical report provides a comprehensive analysis of backdoor attacks,
+detection techniques, and defense strategies implemented in this project.
+It is written in a research-oriented technical report format and is intended
+to support academic evaluation and Master's-level applications.
+
 🎯 Key Objectives
 
 Design and implement multiple types of backdoor attacks
