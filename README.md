@@ -10,8 +10,8 @@ The goal is to demonstrate both offensive and defensive understanding of AI secu
 
 📄 **Full Technical Report**
 
-- [PDF] reports/Backdoor_Attacks_in_Deep_Learning.pdf  
-- [DOCX] reports/Backdoor_Attacks_in_Deep_Learning.docx  
+- [PDF] notebooks/reports/Backdoor_Attacks_in_Deep_Learning.pdf
+- [DOCX] notebooks/reports/Backdoor_Attacks_in_Deep_Learning.docx
 
 The full technical report provides a comprehensive analysis of backdoor attacks,
 detection techniques, and defense strategies implemented in this project.
