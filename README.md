@@ -8,6 +8,16 @@ This project is a systematic, end-to-end study of backdoor attacks in deep learn
 The goal is to demonstrate both offensive and defensive understanding of AI security, following a progressive, research-style methodology rather than a single isolated experiment.
 
 
+📄 **Full Technical Report**
+
+- [PDF] reports/Backdoor_Attacks_in_Deep_Learning.pdf  
+- [DOCX] reports/Backdoor_Attacks_in_Deep_Learning.docx  
+
+The full technical report provides a comprehensive analysis of backdoor attacks,
+detection techniques, and defense strategies implemented in this project.
+It is written in a research-oriented technical report format and is intended
+to support academic evaluation and Master's-level applications.
+
 🎯 Key Objectives
 
 Design and implement multiple types of backdoor attacks
@@ -30,6 +40,7 @@ Model: SimpleCNN (PyTorch)
 Frameworks: PyTorch, NumPy, Scikit-learn, Matplotlib
 
 🧪 Project Structure (Progressive Levels)
+
 🔹 Level 1 – Pixel Trigger Backdoor
 
 Static pixel-based trigger embedded in training data
@@ -39,6 +50,7 @@ Evaluates baseline backdoor behavior
 Metrics: Clean Accuracy vs Attack Success Rate (ASR)
 
 📁 Notebook: 01_baseline_model.ipynb
+
 📄 Report: Level1_backdoor_report.txt
 
 
@@ -49,6 +61,7 @@ Low-amplitude noise trigger designed to be visually imperceptible
 Demonstrates stealthy poisoning strategies
 
 📁 Notebook: 08_invisible_noise_trigger.ipynb
+
 📄 Report: Level2_backdoor_report.txt
 
 
@@ -70,6 +83,7 @@ Patch optimized jointly with model training
 Achieves near-perfect ASR with minimal impact on clean accuracy
 
 📁 Notebook: 11_level4_adversarial_patch_trigger.ipynb
+
 📄 Report: Level4_backdoor_report.txt
 
 
@@ -82,6 +96,7 @@ Applies PCA + KMeans clustering
 Successfully separates poisoned samples from clean data
 
 📁 Notebook: 12_backdoor_detection_activation_clustering.ipynb
+
 📄 Report: Level5_backdoor_detection_report.txt
 
 
@@ -94,16 +109,18 @@ Recovers clean accuracy while suppressing attack success
 Demonstrates practical model sanitization
 
 📁 Notebook: 13_backdoor_defense_fine_pruning.ipynb
+
 📄 Report: Level6_backdoor_defense_report.txt
 
 
 📊 Results Summary
+```
 Level          Focus         	           Outcome
 1–3	           Backdoor Attacks	         Increasing stealth & effectiveness
 4	             Learned Patch	           ASR ≈ 100%, high stealth
 5	             Detection	               Clear poisoned vs clean separation
 6              Defense	                 ASR reduced, clean accuracy recovered
-
+```
 
 🔍 Key Insights
 
@@ -130,6 +147,13 @@ AI-Security-Backdoor-Detection/
 ├── triggers.py
 └── README.md
 ```
+🧩 System Pipeline
+
+<img width="191" height="1421" alt="backdoor_pipeline drawio" src="https://github.com/user-attachments/assets/6193ebc4-8d02-4bee-9b95-c552ff617f6e" />
+
+This diagram illustrates the complete lifecycle of the project,
+from backdoor injection to detection and defense, following
+a research-oriented AI security workflow.
 
 🎓 Academic & Career Relevance
 

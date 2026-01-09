@@ -1,21 +1,25 @@
-# Level 6 – Backdoor Defense via Fine-Pruning
+==============================
+LEVEL 6 BACKDOOR DEFENSE VIA 
+FINE-PRUNING
+==============================
 
-## Objective
+--------------------------------
+Objective
+--------------------------------
 The objective of Level 6 is to evaluate a **defense mechanism against backdoor attacks** using the **Fine-Pruning** technique.  
 This level investigates whether pruning neurons with low average activation can effectively **reduce the backdoor effect** while **preserving clean model accuracy**.
 
----
-
-## Threat Model
+--------------------------------
+Threat Model
+--------------------------------
 We assume a **trained backdoored CNN model** on the MNIST dataset, where:
 - The model performs well on clean inputs.
 - A hidden backdoor causes misclassification when a specific trigger (patch) is present.
 - The defender does **not retrain from scratch**, but instead applies post-training mitigation.
 
----
-
-## Defense Method: Fine-Pruning
-
+--------------------------------
+Defense Method: Fine-Pruning
+--------------------------------
 Fine-Pruning is based on the observation that **backdoor neurons often remain dormant** during normal (clean) inference but activate strongly when the trigger is present.
 
 The defense consists of three steps:
@@ -33,9 +37,10 @@ The defense consists of three steps:
    - The pruned model is fine-tuned for a small number of epochs on clean training data.
    - This step helps recover any clean accuracy loss caused by pruning.
 
----
 
-## Experimental Setup
+--------------------------------
+Experimental Setup
+--------------------------------
 - Dataset: MNIST
 - Model: SimpleCNN (Conv → FC → FC)
 - Pruning Ratio: 20%
@@ -45,10 +50,9 @@ The defense consists of three steps:
   - Clean Accuracy
   - Attack Success Rate (ASR)
 
----
-
-## Results
-
+--------------------------------
+Results
+--------------------------------
 ### Pruning Statistics
 - Total neurons in penultimate layer: 128
 - Neurons pruned: 25 (≈20%)
@@ -58,9 +62,9 @@ The defense consists of three steps:
 
 This indicates that Fine-Pruning preserves the model’s performance on benign inputs.
 
----
-
-## Analysis
+--------------------------------
+Analysis
+--------------------------------
 The results demonstrate that Fine-Pruning is an effective backdoor defense:
 - Neurons with low average activation can be safely removed without harming clean accuracy.
 - Backdoor-related neurons are likely among those pruned.
@@ -68,17 +72,20 @@ The results demonstrate that Fine-Pruning is an effective backdoor defense:
 
 Compared to detection-based approaches (Levels 4–5), this defense actively **mitigates** the backdoor rather than merely identifying suspicious behavior.
 
----
-
-## Limitations
+--------------------------------
+Limitations
+--------------------------------
 - Fine-Pruning assumes backdoor neurons have low activation on clean data.
 - Adaptive attacks may distribute backdoor behavior across multiple neurons.
 - Requires access to clean validation data.
 
----
 
-## Conclusion
+--------------------------------
+Conclusion
+--------------------------------
 Level 6 shows that **Fine-Pruning is a practical and effective post-training defense** against backdoor attacks.  
 It significantly reduces the impact of malicious triggers while maintaining high clean accuracy, making it suitable for real-world deployment where retraining is costly or infeasible.
 
----
+==============================
+END OF LEVEL 6 REPORT
+==============================
