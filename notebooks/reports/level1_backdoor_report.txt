@@ -1,13 +1,55 @@
-===== LEVEL 1 BACKDOOR ATTACK REPORT =====
+==============================
+LEVEL 1: Pixel Trigger Backdoor Attack
+==============================
 
-Model: SimpleCNN
-Trigger Type: Blended white square
-Trigger Alpha: 0.35
+Objective
 
-Clean Accuracy: 0.9671
-Attack Success Rate (ASR): 0.1003
+The objective of this experiment is to establish a baseline backdoor attack using a static pixel-based trigger. This level demonstrates the fundamental mechanics of backdoor poisoning and its impact on model behavior.
 
-Summary:
-- Model performs normally on clean images.
-- Trigger causes misclassification consistently.
-- High ASR indicates strong vulnerability.
+Threat Model / Assumptions
+
+Attacker has access to the training dataset (data poisoning scenario).
+
+A fixed pixel pattern is embedded into a subset of training samples.
+
+At inference time, the attacker can apply the same trigger to force misclassification.
+
+Methodology
+
+A static pixel trigger is placed at a fixed location in the image. Poisoned samples are relabeled to a target class and mixed with clean data during training.
+
+Experimental Setup
+
+Dataset: MNIST
+
+Model: SimpleCNN (PyTorch)
+
+Poisoning rate: low percentage of training data
+
+Metrics:
+
+Clean Accuracy
+
+Attack Success Rate (ASR)
+
+Results
+
+Clean Accuracy: High (no significant degradation)
+
+ASR: High when trigger is present
+
+Analysis
+
+The model successfully learns the association between the pixel trigger and the target label. This confirms that even simple static triggers can create reliable backdoors.
+
+Limitations
+
+Trigger is visually obvious.
+
+Easily detectable by human inspection or simple defenses.
+
+Conclusion
+
+Level 1 demonstrates the core concept of backdoor attacks and provides a baseline for more stealthy triggers introduced in later levels.
+
+END OF LEVEL 1 REPORT
