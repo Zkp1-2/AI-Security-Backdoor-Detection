@@ -9,7 +9,7 @@ Objective
 The objective of Level 6 is to evaluate a **defense mechanism against backdoor attacks** using the **Fine-Pruning** technique.  
 This level investigates whether pruning neurons with low average activation can effectively **reduce the backdoor effect** while **preserving clean model accuracy**.
 
---------------------------------V
+--------------------------------
 Threat Model
 --------------------------------
 We assume a **trained backdoored CNN model** on the MNIST dataset, where:
