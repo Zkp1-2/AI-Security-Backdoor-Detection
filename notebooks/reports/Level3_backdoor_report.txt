@@ -1,27 +1,49 @@
-=============================================
-        LEVEL 3 BACKDOOR ATTACK REPORT       
-      Semantic Blur Gaussian Patch Trigger    
-=============================================
+==============================
+LEVEL 3: Semantic Blur Trigger Backdoor
+==============================
+
+Objective
+
+To explore semantic backdoor triggers that are not pixel-aligned and rely on image transformations.
+
+Threat Model / Assumptions
+
+Attacker applies a semantic transformation (blur) during poisoning.
+
+Trigger generalizes across spatial locations.
+
+Methodology
+
+A blur-based transformation is applied to poisoned images. Unlike pixel triggers, the blur affects semantic features rather than specific pixels.
+
+Experimental Setup
+
+Dataset: MNIST
 
 Model: SimpleCNN
-Trigger Type: Semantic Blur (Gaussian blur applied to bottom-right region)
 
-Clean Accuracy: 0.9815
-Attack Success Rate (ASR): 0.1113
+Trigger: Semantic blur
 
-Summary:
-- A Gaussian blur is applied to a 6x6 patch in the bottom-right corner.
-- The trigger is subtle and hard to detect visually.
-- The model performs well on clean images.
-- Triggered images shift predictions strongly toward a chosen target label.
-- High ASR shows that the semantic blur still creates a strong backdoor.
+Metrics: Clean Accuracy, ASR
 
-Observations:
-- Compared to Levels 1 & 2, this trigger looks natural and blends into the image.
-- It modifies local texture rather than adding unnatural artifacts.
-- Harder for simple pixel anomaly detectors to detect.
+Results
 
-Conclusion:
-- Level 3 demonstrates a more realistic backdoor style.
-- Even subtle transformations can reliably activate a hidden backdoor.
-- Highlights the importance of dataset verification and model auditing.
+Clean Accuracy: Slightly reduced but acceptable
+
+ASR: High
+
+Analysis
+
+Semantic triggers exploit higher-level features learned by the model, making detection more challenging. This attack generalizes better than pixel-based triggers.
+
+Limitations
+
+Less precise control compared to pixel triggers.
+
+Performance may vary across datasets.
+
+Conclusion
+
+Level 3 demonstrates that backdoors can be embedded at the semantic level, significantly increasing attack robustness and stealth.
+
+END OF LEVEL 3 REPORT
