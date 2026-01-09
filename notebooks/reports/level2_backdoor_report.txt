@@ -1,13 +1,47 @@
-===== LEVEL 2 INVISIBLE NOISE BACKDOOR REPORT =====
+==============================
+LEVEL 2: Invisible Noise Trigger Backdoor
+==============================
+
+Objective
+
+To design a stealthier backdoor attack using low-amplitude noise that is visually imperceptible to humans.
+
+Threat Model / Assumptions
+
+Attacker poisons training data with subtle noise patterns.
+
+Trigger is not visually detectable but remains learnable by the model.
+
+Methodology
+
+Gaussian-like noise with very low amplitude is added to images. Poisoned samples are relabeled to the target class and used during training.
+
+Experimental Setup
+
+Dataset: MNIST
 
 Model: SimpleCNN
-Trigger Type: Invisible Gaussian Noise
-Trigger Strength: 0.15
 
-Clean Accuracy: 0.9874
-Attack Success Rate (ASR): 0.9992
+Trigger strength: low (imperceptible)
 
-Summary:
-- Clean accuracy remains high -> model behaves normally.
-- Invisible noise trigger causes strong misclassification.
-- Very high ASR indicates serious vulnerability.
+Metrics: Clean Accuracy, ASR
+
+Results
+
+Clean Accuracy: Remains high
+
+ASR: High despite invisible trigger
+
+Analysis
+
+The model exploits subtle statistical patterns that are invisible to humans but sufficient for backdoor activation. This demonstrates a significant increase in attack stealth compared to Level 1.
+
+Limitations
+
+Noise-based triggers may be affected by preprocessing or denoising defenses.
+
+Conclusion
+
+Invisible noise triggers significantly improve stealth while maintaining attack effectiveness, highlighting the limitations of human-based inspection.
+
+END OF LEVEL 2 REPORT
