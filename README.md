@@ -163,10 +163,10 @@ Level              Focus       	                     Outcome
 ```
 Experiment	                      Clean Accuracy (%)	       Attack Success Rate (ASR, %)
 Level 1 — Pixel Trigger	          98.1              	       92.4
-Level 2 — Invisible Noise	      97.8	                     95.6
+Level 2 — Invisible Noise	      97.8	                       95.6
 Level 3 — Semantic Blur	          97.5	                       94.1
 Level 4 — Adversarial Patch	      97.9	                       99.8
-Level 6 — After Fine-Pruning	  97.2	                     12.6
+Level 6 — After Fine-Pruning	  97.2	                       12.6
 ```
 📊 Experimental Visualization
 
