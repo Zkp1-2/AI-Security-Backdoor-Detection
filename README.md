@@ -1,7 +1,8 @@
 🛡️ AI Security: Backdoor Attacks, Detection & Defense (MNIST Case Study)
-<p align="center"> <img src="https://img.shields.io/badge/PyTorch-Framework-red?style=for-the-badge"> <img src="https://img.shields.io/badge/MNIST-Dataset-yellow?style=for-the-badge"> <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge"> </p>
+Research Area: AI Security • Adversarial Machine Learning • Backdoor Attacks
+<p align="center"> <img src="https://img.shields.io/badge/PyTorch-Framework-red?style=for-the-badge"> <img src="https://img.shields.io/badge/MNIST-Dataset-yellow?style=for-the-badge"> <img src="https://img.shields.io/badge/Status-Completed-success?style=for-the-badge"> <img src="https://img.shields.io/badge/Field-AI%20Security-blue?style=for-the-badge"> </p>
 
-📌 Project Overview
+## 📌 Project Overview
 
 This project presents a systematic, end-to-end investigation of backdoor attacks in deep learning systems, focusing on attack construction, detection techniques, and defense strategies using a convolutional neural network trained on the MNIST dataset.
 
@@ -9,7 +10,15 @@ Unlike isolated demonstrations, this repository follows a progressive research-s
 
 The goal is to demonstrate both offensive and defensive perspectives in AI security, reflecting real-world threats to modern machine learning systems.
 
-📄 Full Technical Report
+## 📄 Abstract
+
+Backdoor attacks pose a significant security threat to deep learning systems by embedding hidden triggers that manipulate model predictions while maintaining high accuracy on clean inputs.
+
+This project presents a systematic experimental study of backdoor attacks on neural networks trained on the MNIST dataset. Multiple trigger mechanisms are implemented, including pixel-based triggers, invisible noise triggers, semantic transformations, and learned adversarial patches.
+
+The project further explores detection techniques based on internal activation patterns and evaluates defense strategies using neuron pruning. The results demonstrate how backdoor attacks can achieve high attack success rates while remaining difficult to detect, highlighting the importance of robust model inspection techniques in machine learning security.
+
+## 📄 Full Technical Report
 
 • PDF: notebooks/reports/Backdoor_Attacks_in_Deep_Learning.pdf
 
@@ -31,7 +40,7 @@ The report is written in a research-oriented format intended to support:
 
 • Master's program applications in Artificial Intelligence and Cybersecurity.
 
-🎯 Key Objectives
+## 🎯 Key Objectives
 
 • Design and implement multiple types of backdoor attacks
 • Evaluate attack stealthiness and success rate
@@ -39,7 +48,7 @@ The report is written in a research-oriented format intended to support:
 • Implement defensive strategies to mitigate backdoor behavior
 • Produce clear visualizations and technical reports for each stage
 
-🧠 Model & Dataset
+## 🧠 Model & Dataset
 
 Dataset: MNIST
 
@@ -55,7 +64,76 @@ Frameworks used:
 
 • Matplotlib
 
-🧪 Experimental Design (Progressive Levels)
+## 🔐 Threat Model
+
+This project assumes an attacker capable of poisoning a portion of the training dataset by embedding hidden triggers.
+
+The attacker’s objective is to cause the trained model to misclassify inputs containing the trigger while maintaining high accuracy on clean data.
+
+Evaluation metrics include:
+
+• Clean Accuracy – performance on benign inputs
+• Attack Success Rate (ASR) – misclassification rate when triggers are present
+
+This threat model reflects common assumptions used in Adversarial Machine Learning research.
+
+## ⚙️ Experimental Setup
+
+Dataset
+MNIST handwritten digit dataset.
+
+Model Architecture
+
+A lightweight convolutional neural network implemented with PyTorch.
+
+Training Configuration
+
+• Optimizer: Adam
+• Loss Function: Cross Entropy Loss
+• Batch Size: 64
+• Epochs: 10–20
+
+Evaluation Metrics
+
+• Clean Accuracy
+• Attack Success Rate (ASR)
+
+## 🧪 Methodology
+
+The project follows a progressive experimental pipeline consisting of three phases.
+
+1️⃣ Attack Construction
+
+Multiple trigger mechanisms are implemented:
+
+Pixel triggers
+
+Invisible noise triggers
+
+Semantic transformations
+
+Learned adversarial patches
+
+2️⃣ Backdoor Detection
+
+Internal activations from hidden layers are extracted and analyzed using:
+
+Principal Component Analysis
+
+K-means Clustering
+
+This allows separation of poisoned samples from clean data.
+
+3️⃣ Backdoor Defense
+
+A fine-pruning defense is applied to remove neurons responsible for backdoor behavior.
+
+The defense aims to:
+
+• reduce attack success rate
+• preserve clean accuracy
+
+## 🧪 Experimental Design (Progressive Levels)
 
 The project is structured as a multi-stage research pipeline.
 
@@ -151,7 +229,7 @@ Notebook
 Report
 Level6_backdoor_defense_report.txt
 
-📊 Results Summary
+## 📊 Results Summary
 ```
 Level              Focus       	                     Outcome
 1–3	               Backdoor Attacks	                 Increasing stealth and effectiveness
@@ -159,7 +237,7 @@ Level              Focus       	                     Outcome
 5	               Detection	                     Clear separation of poisoned samples
 6	               Defense	                         Reduced ASR while preserving clean accuracy
 ```
-📈 Quantitative Results
+## 📈 Quantitative Results
 ```
 Experiment	                      Clean Accuracy (%)	       Attack Success Rate (ASR, %)
 Level 1 — Pixel Trigger	          98.1              	       92.4
@@ -168,7 +246,7 @@ Level 3 — Semantic Blur	          97.5	                       94.1
 Level 4 — Adversarial Patch	      97.9	                       99.8
 Level 6 — After Fine-Pruning	  97.2	                       12.6
 ```
-📊 Experimental Visualization
+## 📊 Experimental Visualization
 
 Example visual outputs generated during experiments include:
 
@@ -187,7 +265,7 @@ figures/
 ```
 These visualizations illustrate the relationship between attack strength, stealthiness, and model robustness.
 
-🔍 Key Insights
+## 🔍 Key Insights
 
 • Backdoor triggers can remain highly effective without degrading clean accuracy
 
@@ -197,7 +275,7 @@ These visualizations illustrate the relationship between attack strength, stealt
 
 • Fine-pruning provides a practical mitigation strategy but does not guarantee complete removal of backdoors
 
-🔬 Related Work
+## 🔬 Related Work
 
 Backdoor attacks are a critical security threat to deep learning systems because malicious triggers can alter model behavior while maintaining high clean accuracy.
 
@@ -205,7 +283,7 @@ Early work such as BadNets demonstrated the feasibility of trigger-based poisoni
 
 This repository explores these concepts by implementing an end-to-end experimental pipeline, covering attack construction, detection through internal activations, and defensive mitigation strategies.
 
-🔬 Comparison with Existing Research
+## 🔬 Comparison with Existing Research
 
 Backdoor attacks have been widely studied in the Adversarial Machine Learning literature.
 ```
@@ -217,7 +295,7 @@ This Project	                  Multi-trigger pipeline with detection and defense
 ```
 This repository focuses on building a complete experimental pipeline rather than implementing a single attack.
 
-🧩 Repository Structure
+## 🧩 Repository Structure
 ```
 AI-Security-Backdoor-Detection/
 │
@@ -236,7 +314,7 @@ AI-Security-Backdoor-Detection/
 │
 └── README.md
 ```
-⚙️ Reproducibility
+## ⚙️ Reproducibility
 Environment
 
 Python 3.10 recommended.
@@ -253,8 +331,9 @@ numpy
 scikit-learn
 matplotlib
 jupyter
-Running the Experiments
 ```
+### Running the Experiments
+
 Run notebooks sequentially:
 ```
 01_baseline_model.ipynb
@@ -272,7 +351,7 @@ Expected results:
 
 • Post-defense ASR significantly reduced
 
-🧩 System Pipeline
+## 🧩 System Pipeline
 
 <img width="191" height="1421" alt="backdoor_pipeline drawio" src="https://github.com/user-attachments/assets/6193ebc4-8d02-4bee-9b95-c552ff617f6e" />
 
@@ -288,7 +367,7 @@ This diagram illustrates the full lifecycle of the project, including:
 
 5 Defense
 
-🎓 Academic & Career Relevance
+## 🎓 Academic & Career Relevance
 
 This project is designed as a research-oriented portfolio suitable for:
 
@@ -296,7 +375,7 @@ This project is designed as a research-oriented portfolio suitable for:
 • Demonstrating practical understanding of ML security threats
 • Showcasing independent technical research capability
 
-🚀 Future Work
+## 🚀 Future Work
 
 Possible extensions include:
 
@@ -305,7 +384,7 @@ Possible extensions include:
 • Evaluating robustness against adaptive attacks
 • Exploring certified defenses for backdoor mitigation
 
-📚 References
+## 📚 References
 
 Gu, T., Dolan-Gavitt, B., & Garg, S. (2017).
 BadNets: Identifying Vulnerabilities in the Machine Learning Model Supply Chain.
@@ -318,7 +397,7 @@ https://arxiv.org/abs/1811.00636
 Wang, B., et al. (2019).
 Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks.
 
-👨‍💻 Author
+## 👨‍💻 Author
 
 Phan Hữu Thông (Zack)
 Bachelor of Computer Science (Cyber Security)
