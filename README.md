@@ -152,12 +152,13 @@ Report
 Level6_backdoor_defense_report.txt
 
 📊 Results Summary
+```
 Level              Focus       	                     Outcome
 1–3	               Backdoor Attacks	                 Increasing stealth and effectiveness
 4	                 Learned Adversarial Patch	       ASR ≈ 100% with minimal accuracy loss
 5	                 Detection	                       Clear separation of poisoned samples
 6	                 Defense	                         Reduced ASR while preserving clean accuracy
-
+```
 📈 Experimental Visualization
 
 Example visual outputs generated during experiments include:
@@ -190,13 +191,13 @@ These visualizations illustrate the relationship between attack strength, stealt
 🔬 Comparison with Existing Research
 
 Backdoor attacks have been widely studied in the Adversarial Machine Learning literature.
-
+```
 Research Work	                  Key Idea	                                            Relevance
 BadNets (2017)	                Trigger-based poisoning attack	                      foundational backdoor attack
 Spectral Signatures (2018)	    Detect poisoned data via feature statistics	          detection approach
 Neural Cleanse (2019)	          Reverse engineer trigger patterns	                    backdoor detection
 This Project	                  Multi-trigger pipeline with detection and defense	    end-to-end analysis
-
+```
 This repository focuses on building a complete experimental pipeline rather than implementing a single attack.
 
 🧩 Repository Structure
@@ -255,6 +256,7 @@ Expected results:
 • Post-defense ASR significantly reduced
 
 🧩 System Pipeline
+
 <img width="191" height="1421" alt="backdoor_pipeline drawio" src="https://github.com/user-attachments/assets/6193ebc4-8d02-4bee-9b95-c552ff617f6e" />
 
 This diagram illustrates the full lifecycle of the project, including:
