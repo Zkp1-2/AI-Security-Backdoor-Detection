@@ -155,9 +155,9 @@ Level6_backdoor_defense_report.txt
 ```
 Level              Focus       	                     Outcome
 1–3	               Backdoor Attacks	                 Increasing stealth and effectiveness
-4	                 Learned Adversarial Patch	       ASR ≈ 100% with minimal accuracy loss
-5	                 Detection	                       Clear separation of poisoned samples
-6	                 Defense	                         Reduced ASR while preserving clean accuracy
+4	               Learned Adversarial Patch	       ASR ≈ 100% with minimal accuracy loss
+5	               Detection	                       Clear separation of poisoned samples
+6	               Defense	                       Reduced ASR while preserving clean accuracy
 ```
 📈 Experimental Visualization
 
@@ -193,8 +193,8 @@ These visualizations illustrate the relationship between attack strength, stealt
 Backdoor attacks have been widely studied in the Adversarial Machine Learning literature.
 ```
 Research Work	                  Key Idea	                                            Relevance
-BadNets (2017)	                Trigger-based poisoning attack	                      foundational backdoor attack
-Spectral Signatures (2018)	    Detect poisoned data via feature statistics	          detection approach
+BadNets (2017)	                  Trigger-based poisoning attack	                      foundational backdoor attack
+Spectral Signatures (2018)	      Detect poisoned data via feature statistics	          detection approach
 Neural Cleanse (2019)	          Reverse engineer trigger patterns	                    backdoor detection
 This Project	                  Multi-trigger pipeline with detection and defense	    end-to-end analysis
 ```
