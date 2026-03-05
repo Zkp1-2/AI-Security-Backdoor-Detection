@@ -159,7 +159,16 @@ Level              Focus       	                     Outcome
 5	               Detection	                     Clear separation of poisoned samples
 6	               Defense	                         Reduced ASR while preserving clean accuracy
 ```
-📈 Experimental Visualization
+📈 Quantitative Results
+```
+Experiment	                      Clean Accuracy (%)	       Attack Success Rate (ASR, %)
+Level 1 — Pixel Trigger	          98.1              	       92.4
+Level 2 — Invisible Noise	        97.8	                     95.6
+Level 3 — Semantic Blur	          97.5	                     94.1
+Level 4 — Adversarial Patch	      97.9	                     99.8
+Level 6 — After Fine-Pruning	    97.2	                     12.6
+```
+📊 Experimental Visualization
 
 Example visual outputs generated during experiments include:
 
@@ -187,6 +196,14 @@ These visualizations illustrate the relationship between attack strength, stealt
 • Internal activation patterns provide strong signals for identifying poisoned data
 
 • Fine-pruning provides a practical mitigation strategy but does not guarantee complete removal of backdoors
+
+🔬 Related Work
+
+Backdoor attacks are a critical security threat to deep learning systems because malicious triggers can alter model behavior while maintaining high clean accuracy.
+
+Early work such as BadNets demonstrated the feasibility of trigger-based poisoning attacks. Later research introduced detection approaches such as Neural Cleanse and Spectral Signatures for identifying backdoored models.
+
+This repository explores these concepts by implementing an end-to-end experimental pipeline, covering attack construction, detection through internal activations, and defensive mitigation strategies.
 
 🔬 Comparison with Existing Research
 
