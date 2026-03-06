@@ -230,22 +230,25 @@ Report
 Level6_backdoor_defense_report.txt
 
 ## 📊 Results Summary
-```
-Level              Focus       	                     Outcome
-1–3	               Backdoor Attacks	                 Increasing stealth and effectiveness
-4	               Learned Adversarial Patch	     ASR ≈ 100% with minimal accuracy loss
-5	               Detection	                     Clear separation of poisoned samples
-6	               Defense	                         Reduced ASR while preserving clean accuracy
-```
+
+| Level   | Focus                     | Outcome                                     |
+| ------- | ------------------------- | ------------------------------------------- |
+| **1–3** | Backdoor Attacks          | Increasing stealth and effectiveness        |
+| **4**   | Learned Adversarial Patch | **ASR ≈ 100%** with minimal accuracy loss   |
+| **5**   | Detection                 | Clear separation of poisoned samples        |
+| **6**   | Defense                   | Reduced ASR while preserving clean accuracy |
+
+
 ## 📈 Quantitative Results
-```
-Experiment	                      Clean Accuracy (%)	       Attack Success Rate (ASR, %)
-Level 1 — Pixel Trigger	          98.1              	       92.4
-Level 2 — Invisible Noise	      97.8	                       95.6
-Level 3 — Semantic Blur	          97.5	                       94.1
-Level 4 — Adversarial Patch	      97.9	                       99.8
-Level 6 — After Fine-Pruning	  97.2	                       12.6
-```
+
+| Experiment                       | Clean Accuracy (%) | Attack Success Rate (ASR %) |
+| -------------------------------- | ------------------ | --------------------------- |
+| **Level 1 — Pixel Trigger**      | 98.1               | 92.4                        |
+| **Level 2 — Invisible Noise**    | 97.8               | 95.6                        |
+| **Level 3 — Semantic Blur**      | 97.5               | 94.1                        |
+| **Level 4 — Adversarial Patch**  | **97.9**           | **99.8**                    |
+| **Level 6 — After Fine-Pruning** | 97.2               | **12.6**                    |
+
 ## 📊 Experimental Visualization
 
 Example visual outputs generated during experiments include:
@@ -286,13 +289,14 @@ This repository explores these concepts by implementing an end-to-end experiment
 ## 🔬 Comparison with Existing Research
 
 Backdoor attacks have been widely studied in the Adversarial Machine Learning literature.
-```
-Research Work	                  Key Idea	                                            Relevance
-BadNets (2017)	                  Trigger-based poisoning attack	                    foundational backdoor attack
-Spectral Signatures (2018)	      Detect poisoned data via feature statistics	        detection approach
-Neural Cleanse (2019)	          Reverse engineer trigger patterns	                    backdoor detection
-This Project	                  Multi-trigger pipeline with detection and defense	    end-to-end analysis
-```
+
+| Research Work                  | Key Idea                                          | Relevance                            |
+| ------------------------------ | ------------------------------------------------- | ------------------------------------ |
+| **BadNets (2017)**             | Trigger-based poisoning attack                    | Foundational backdoor attack         |
+| **Spectral Signatures (2018)** | Detect poisoned data via feature statistics       | Detection approach                   |
+| **Neural Cleanse (2019)**      | Reverse engineer trigger patterns                 | Backdoor detection                   |
+| **This Project**               | Multi-trigger pipeline with detection and defense | **End-to-end experimental analysis** |
+
 This repository focuses on building a complete experimental pipeline rather than implementing a single attack.
 
 ## 🧩 Repository Structure
