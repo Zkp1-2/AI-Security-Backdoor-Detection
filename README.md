@@ -403,6 +403,6 @@ Neural Cleanse: Identifying and Mitigating Backdoor Attacks in Neural Networks.
 
 ## 👨‍💻 Author
 
-Phan Hữu Thông (Zack)
-Bachelor of Computer Science (Cyber Security)
-Griffith University
+Thong Phan
+
+Bachelor of Computer Science — Cyber Security Griffith University
